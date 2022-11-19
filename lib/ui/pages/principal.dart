@@ -20,12 +20,13 @@ class Principal extends StatelessWidget {
                 itemBuilder: (context, i) {
                   return ListTile(
                     leading: CircleAvatar(
-                      child: Text(controlp.listarpost![i].userId.toString()),
+                      child: Text(controlp.listarpost![i].id.toString()),
                     ),
                     title: Text(controlp.listarpost![i].title.toString()),
                     subtitle: Text(controlp.listarpost![i].body.toString()),
                     trailing: CircleAvatar(
-                      child: Text(controlp.listarpost![i].id.toString()),
+                      radius: 10,
+                      child: Text(controlp.listarpost![i].userId.toString()),
                     ),
                   );
                 })

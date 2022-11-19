@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:peticiones_http/ui/pages/fotos.dart';
+import 'package:peticiones_http/ui/pages/login.dart';
 import 'package:peticiones_http/ui/pages/principal.dart';
 
 class App extends StatelessWidget {
@@ -7,11 +9,16 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Peticiones Http',
       theme: ThemeData(primarySwatch: Colors.blueGrey),
       debugShowCheckedModeBanner: false,
-      home: const Principal(),
+      home: const Login(),
+      routes: {
+        '/login': (context) => const Login(),
+        '/principal': (context) => const Principal(),
+        '/fotos': (context) => const Album(),
+      },
     );
   }
 }
