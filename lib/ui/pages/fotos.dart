@@ -12,8 +12,17 @@ class Album extends StatelessWidget {
           (value) => null,
         );
     return Scaffold(
-      appBar: AppBar(title: const Text('Albumes')),
-      body: Obx(() => cf.listarfotos!.isNotEmpty == true
+      appBar: AppBar(
+        title: const Text('Albumes'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Get.toNamed('/principal');
+              },
+              icon: const Icon(Icons.comment))
+        ],
+      ),
+      body: Obx(() => cf.listarfotos!.isNotEmpty != false
           ? ListView.builder(
               itemCount: cf.listarfotos!.length,
               itemBuilder: ((context, i) {
